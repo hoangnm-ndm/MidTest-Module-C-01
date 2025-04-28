@@ -1,0 +1,34 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "Lập trình web với React",
+      "description": "Khóa học React cơ bản cho người mới bắt đầu.",
+      "createdAt": "2025-04-01T00:00:00Z",
+      "price": 2000000
+    },
+    {
+      "id": 2,
+      "name": "Lập trình Python",
+      "description": "Khóa học Python từ cơ bản đến nâng cao.",
+      "createdAt": "2025-04-10T00:00:00Z",
+      "price": 2500000
+    }
+  ],
+  "lessons": [
+    {
+      "id": 1,
+      "courseId": 1,
+      "title": "Giới thiệu về React",
+      "content": "Làm quen với React và cách cấu hình môi trường phát triển.",
+      "createdAt": "2025-04-01T01:00:00Z"
+    },
+    {
+      "id": 2,
+      "courseId": 1,
+      "title": "Cấu trúc và Component trong React",
+      "content": "Cách sử dụng và tổ chức các components trong React.",
+      "createdAt": "2025-04-02T01:00:00Z"
+    }
+  ]
+}
