@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-l%C3%A0m-b%C3%A0i">Hướng dẫn làm bài</h1>
+<ul>
+<li>Thời gian làm bài: 180 phút.</li>
+<li>Download repo về máy của học viên và thực hiện code trực tiếp trong thư mục này.</li>
+<li>Sau khi làm bài xong, học viên đẩy code lên github của mình và nộp lại link repo đó qua google form: <a href="https://forms.gle/joNB5cDdMK5Eqv5E7">Form Nộp Bài</a>.</li>
+<li>Trong quá trình làm bài, gỡ bỏ và không sử dụng các extensions có sử dụng AI như Tabnine, Github copilot, Codeium, v.v.</li>
+<li>Được phép mở các trang web lấy giao diện hoặc icons như tailwindCSS, bootstrap, boxicon, fontawesome, .v.v trong quá trình làm bài.</li>
+</ul>
+<h1 id="y%C3%AAu-c%E1%BA%A7u">Yêu cầu</h1>
+<p>Xây dựng ứng dụng quản lý hệ thống học tập (LMS) bản MVP với ReactJS và json-server bao gồm các tính năng sau:</p>
+<h2 id="1-giao-di%E1%BB%87n-v%C3%A0-routing-2-%C4%91i%E1%BB%83m">1. Giao diện và routing (2 điểm)</h2>
+<ul>
+<li>Dữ liệu trong <code>db.json</code> (Khóa học, Bài học, Học viên) đã được cung cấp sẵn.</li>
+<li>Xây dựng hệ định tuyến cho các trang:
+<ul>
+<li>Trang danh sách khóa học.</li>
+<li>Trang chi tiết khóa học (bao gồm danh sách bài học).</li>
+<li>Trang danh sách học viên của khóa học.</li>
+</ul>
+</li>
+<li>Xử lý route không tồn tại (404) và hiển thị thông báo lỗi cho người dùng.</li>
+<li>Giao diện thân thiện và dễ sử dụng, có thể sử dụng CSS hoặc thư viện UI đơn giản.</li>
+</ul>
+<hr>
+<h2 id="2-qu%E1%BA%A3n-l%C3%BD-kh%C3%B3a-h%E1%BB%8Dc-courses-2-%C4%91i%E1%BB%83m">2. Quản Lý Khóa Học (courses) (2 điểm)</h2>
+<ul>
+<li><strong>GET</strong>: Lấy danh sách khóa học từ API và hiển thị tên + mô tả khóa học.</li>
+<li><strong>POST</strong>: Thêm mới khóa học qua form.</li>
+<li><strong>PUT</strong>: Cập nhật thông tin khóa học.</li>
+<li><strong>DELETE</strong>: Xóa khóa học.</li>
+</ul>
+<hr>
+<h2 id="3-qu%E1%BA%A3n-l%C3%BD-b%C3%A0i-h%E1%BB%8Dc-lessons-2-%C4%91i%E1%BB%83m">3. Quản Lý Bài Học (lessons) (2 điểm)</h2>
+<ul>
+<li><strong>GET</strong>: Lấy danh sách bài học theo khóa học (khi ấn vào tên khoá học sẽ vào trang danh sách bài học thuộc khoá học đó).</li>
+<li><strong>POST</strong>: Thêm bài học cho khóa học.</li>
+<li><strong>PUT</strong>: Cập nhật thông tin bài học.</li>
+<li><strong>DELETE</strong>: Xóa bài học khỏi khóa học.</li>
+</ul>
+<hr>
+<h2 id="4-c%C3%A1c-t%C3%ADnh-n%C4%83ng-n%C3%A2ng-cao-2-%C4%91i%E1%BB%83m">4. Các tính năng nâng cao (2 điểm)</h2>
+<ul>
+<li>Tìm kiếm khóa học theo tên.</li>
+<li>Tìm kiếm bài học theo tên.</li>
+<li>Sắp xếp khoá học theo tên từ A-Z hoặc Z-A.</li>
+<li>Sắp xếp khoá học theo giá từ thấp đến cao hoặc từ cao xuống thấp, bỏ sắp xếp.</li>
+</ul>
+<hr>
+<h2 id="5-%C4%91%C4%83ng-k%C3%BD-%C4%91%C4%83ng-nh%E1%BA%ADp-v%C3%A0-nh%E1%BA%ADp-h%E1%BB%8Dc-2-%C4%91i%E1%BB%83m">5. Đăng ký, đăng nhập và nhập học (2 điểm)</h2>
+<ul>
+<li>Đăng ký vào hệ thống (bao gồm email, password, tên học viên).</li>
+<li>Đăng nhập vào hệ thống (bao gồm email, password). Sau khi đăng nhập thành công, chuyển hướng đến trang danh sách khóa học.</li>
+<li>Học viên có thể đăng ký khoá học hoặc huỷ đăng ký khoá học.</li>
+<li>Học viên có thể xem danh sách khoá học đã đăng ký.</li>
+</ul>
+<hr>
+<h2 id="quy-%C6%B0%E1%BB%9Bc-t%C3%ADnh-%C4%91i%E1%BB%83m">Quy ước tính điểm:</h2>
+<ul>
+<li><strong>Routing và giao diện:</strong> 2 điểm</li>
+<li><strong>Quản lý khóa học:</strong> 2 điểm</li>
+<li><strong>Quản lý bài học:</strong> 2 điểm</li>
+<li><strong>Tính năng nâng cao:</strong> 2 điểm</li>
+<li><strong>Đăng ký, đăng nhập và nhập học:</strong> 2 điểm</li>
+</ul>
+
+</body>
+</html>

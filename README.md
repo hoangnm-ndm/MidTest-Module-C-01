@@ -1,7 +1,7 @@
 # Hướng dẫn làm bài
 
 - Thời gian làm bài: 180 phút.
-- Download repo về máy của học viên và thực hiện code trực tiếp trong thư mục này.
+- Download [Repository](https://github.com/hoangnm-ndm/MidTest-Module-C-01) về máy của học viên và thực hiện code trực tiếp trong thư mục này.
 - Sau khi làm bài xong, học viên đẩy code lên github của mình và nộp lại link repo đó qua google form: [Form Nộp Bài](https://forms.gle/joNB5cDdMK5Eqv5E7).
 - Trong quá trình làm bài, gỡ bỏ và không sử dụng các extensions có sử dụng AI như Tabnine, Github copilot, Codeium, v.v.
 - Được phép mở các trang web lấy giao diện hoặc icons như tailwindCSS, bootstrap, boxicon, fontawesome, .v.v trong quá trình làm bài.
