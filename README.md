@@ -2,8 +2,9 @@
 
 - Thời gian làm bài: 120 phút.
 - Download [Repository](https://github.com/hoangnm-ndm/MidTest-Module-C-01) về máy của học viên và thực hiện code trực tiếp trong thư mục này.
-- Sau khi làm bài xong, học viên đưa code lên Github và gửi lại link repo cho giảng viên qua link nộp bài ở classroom (**link source để public - không commit sau khi đã nộp bài**).
+- Sau khi làm bài xong, học viên được chấm bài tại chỗ.
 - Trong quá trình làm bài, gỡ bỏ và không sử dụng các extensions có sử dụng AI như Tabnine, Github copilot, Codeium, v.v.
+- Không mở nhiều cửa sổ VS Code hoặc các phần mềm không liên quan trong quá trình làm bài.
 - Được phép mở các trang web lấy giao diện hoặc icons như tailwindCSS, bootstrap, boxicon, fontawesome, .v.v trong quá trình làm bài.
 
 ## Yêu cầu
@@ -53,8 +54,8 @@ Xây dựng ứng dụng quản lý hệ thống học tập (LMS) với ReactJS
 
 - Đăng ký vào hệ thống (bao gồm email, password, tên học viên).
 - Đăng nhập vào hệ thống (bao gồm email, password). Sau khi đăng nhập thành công, chuyển hướng đến trang danh sách khóa học.
-- Học viên có thể đăng ký khoá học hoặc huỷ đăng ký khoá học.
-- Học viên có thể xem danh sách khoá học đã đăng ký.
+- Học viên có thể đăng ký khoá học hoặc huỷ đăng ký khoá học, khoá học mà học viên đăng ký sẽ được ghi nhận bằng trường dữ liệu `courses`.
+- Học viên có thể xem danh sách khoá học đã đăng ký, nếu `courses` là mảng rỗng nghĩa là học viên chưa có khoá học nào.
 
 ---
 
