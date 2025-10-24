@@ -7,9 +7,13 @@
 - Không mở nhiều cửa sổ VS Code hoặc các phần mềm không liên quan trong quá trình làm bài.
 - Được phép mở các trang web lấy giao diện hoặc icons như tailwindCSS, bootstrap, boxicon, fontawesome, .v.v trong quá trình làm bài.
 
+---
+
 ## Yêu cầu
 
 Xây dựng ứng dụng quản lý hệ thống học tập (LMS) với ReactJS và `json-server` bao gồm các tính năng sau:
+
+---
 
 ## 1. Giao diện và routing (2 điểm)
 
