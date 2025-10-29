@@ -379,26 +379,20 @@ code {
 <p>Xây dựng ứng dụng quản lý hệ thống học tập (LMS) với ReactJS và <code>json-server</code> bao gồm các tính năng sau:</p>
 <h2 id="1-giao-di%E1%BB%87n-v%C3%A0-routing-1-%C4%91i%E1%BB%83m">1. Giao diện và routing (1 điểm)</h2>
 <ul>
-<li>Dữ liệu trong <code>db.json</code> (Khóa học, Bài học) đã được cung cấp sẵn.</li>
-<li>Xây dựng hệ định tuyến cho các trang:
-<ul>
-<li>ManagementCourse (Trang danh sách khóa học).</li>
-<li>ManagementLesson (Trang danh sách bài học theo khóa học).</li>
-</ul>
-</li>
+<li>Xây dựng hệ thống định tuyến để dễ dàng điều hướng cho những tác vụ phía dưới.</li>
 <li>Xử lý route không tồn tại (404).</li>
 <li>Giao diện thân thiện và dễ sử dụng, có thể sử dụng CSS hoặc thư viện UI đơn giản.</li>
 </ul>
 <h2 id="2-auth-3-%C4%91i%E1%BB%83m">2. Auth (3 điểm)</h2>
 <ul>
-<li>Đăng ký vào hệ thống (bao gồm email, password, fullname). (1.5 điểm)
+<li>Đăng ký vào hệ thống (bao gồm email, password, fullname). (1 điểm)
 <ul>
 <li>Role mặc định là học viên (student).</li>
 <li>Đăng ký thành công chuyển sang trang đăng nhập.</li>
 <li>Đăng ký thất bại, reset form và hiển thị lỗi.</li>
 </ul>
 </li>
-<li>Đăng nhập vào hệ thống (bao gồm email, password). (1.5 điểm)
+<li>Đăng nhập vào hệ thống (bao gồm email, password). (1 điểm)
 <ul>
 <li>Đăng nhập thành công:
 <ul>
@@ -408,6 +402,12 @@ code {
 </li>
 <li>Đăng nhập thất bại reset form và hiển thị lỗi.</li>
 <li>Lưu trạng thái đăng nhập (token) và thông tin người dùng trong localStorage.</li>
+</ul>
+</li>
+<li>Protected Route (xây dựng các tuyến đường được bảo vệ) (1 điểm):
+<ul>
+<li>Nếu role là admin, có thể thực hiện các tác vụ quản lý khoá học, bài học phía dưới đây.</li>
+<li>Nếu role là học viên, chỉ hiện thị trang home sau khi đăng nhập.</li>
 </ul>
 </li>
 </ul>
@@ -451,7 +451,7 @@ code {
 <hr>
 <h2 id="5-c%C3%A1c-t%C3%ADnh-n%C4%83ng-n%C3%A2ng-cao-2-%C4%91i%E1%BB%83m">5. Các tính năng nâng cao (2 điểm)</h2>
 <ul>
-<li>Tìm kiếm khóa học theo tên.</li>
+<li>Tìm kiếm khóa học theo tên (không cần xử lý vấn đề tên tiếng Việt).</li>
 <li>Sắp xếp khóa học theo giá (tăng dần, giảm dần, huỷ sắp xếp).</li>
 </ul>
 <hr>
@@ -460,7 +460,13 @@ code {
 <li>Tổng điểm: <strong>10 điểm.</strong>
 <ul>
 <li>Giao diện và routing: <strong>1 điểm.</strong></li>
-<li>Auth: <strong>3 điểm.</strong></li>
+<li>Auth:
+<ul>
+<li>Đăng ký: <strong>1 điểm.</strong></li>
+<li>Đăng nhập: <strong>1 điểm.</strong></li>
+<li>Protected Route: <strong>1 điểm.</strong></li>
+</ul>
+</li>
 <li>Quản lý khóa học: <strong>2 điểm.</strong></li>
 <li>Quản lý bài học: <strong>2 điểm.</strong></li>
 <li>Các tính năng nâng cao: <strong>2 điểm.</strong></li>

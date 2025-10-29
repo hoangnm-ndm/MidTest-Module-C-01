@@ -15,25 +15,25 @@ Xây dựng ứng dụng quản lý hệ thống học tập (LMS) với ReactJS
 
 ## 1. Giao diện và routing (1 điểm)
 
-- Dữ liệu trong `db.json` (Khóa học, Bài học) đã được cung cấp sẵn.
-- Xây dựng hệ định tuyến cho các trang:
-  - ManagementCourse (Trang danh sách khóa học).
-  - ManagementLesson (Trang danh sách bài học theo khóa học).
+- Xây dựng hệ thống định tuyến để dễ dàng điều hướng cho những tác vụ phía dưới.
 - Xử lý route không tồn tại (404).
 - Giao diện thân thiện và dễ sử dụng, có thể sử dụng CSS hoặc thư viện UI đơn giản.
 
 ## 2. Auth (3 điểm)
 
-- Đăng ký vào hệ thống (bao gồm email, password, fullname). (1.5 điểm)
+- Đăng ký vào hệ thống (bao gồm email, password, fullname). (1 điểm)
   - Role mặc định là học viên (student).
   - Đăng ký thành công chuyển sang trang đăng nhập.
   - Đăng ký thất bại, reset form và hiển thị lỗi.
-- Đăng nhập vào hệ thống (bao gồm email, password). (1.5 điểm)
+- Đăng nhập vào hệ thống (bao gồm email, password). (1 điểm)
   - Đăng nhập thành công:
     - Nếu role là admin, chuyển vào trang quản lý khoá học của admin,
     - Nếu role là học viên, chuyển vào home (lưu ý, không cần xây dựng nội dung cho trang home).
   - Đăng nhập thất bại reset form và hiển thị lỗi.
   - Lưu trạng thái đăng nhập (token) và thông tin người dùng trong localStorage.
+- Protected Route (xây dựng các tuyến đường được bảo vệ) (1 điểm):
+  - Nếu role là admin, có thể thực hiện các tác vụ quản lý khoá học, bài học phía dưới đây.
+  - Nếu role là học viên, chỉ hiện thị trang home sau khi đăng nhập.
 
 **Validation:**
 
@@ -79,7 +79,7 @@ Xây dựng ứng dụng quản lý hệ thống học tập (LMS) với ReactJS
 
 ## 5. Các tính năng nâng cao (2 điểm)
 
-- Tìm kiếm khóa học theo tên.
+- Tìm kiếm khóa học theo tên (không cần xử lý vấn đề tên tiếng Việt).
 - Sắp xếp khóa học theo giá (tăng dần, giảm dần, huỷ sắp xếp).
 
 ---
@@ -88,7 +88,10 @@ Xây dựng ứng dụng quản lý hệ thống học tập (LMS) với ReactJS
 
 - Tổng điểm: **10 điểm.**
   - Giao diện và routing: **1 điểm.**
-  - Auth: **3 điểm.**
+  - Auth:
+    - Đăng ký: **1 điểm.**
+    - Đăng nhập: **1 điểm.**
+    - Protected Route: **1 điểm.**
   - Quản lý khóa học: **2 điểm.**
   - Quản lý bài học: **2 điểm.**
   - Các tính năng nâng cao: **2 điểm.**
