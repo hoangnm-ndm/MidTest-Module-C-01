@@ -13,60 +13,82 @@
 
 Xây dựng ứng dụng quản lý hệ thống học tập (LMS) với ReactJS và `json-server` bao gồm các tính năng sau:
 
----
+## 1. Giao diện và routing (1 điểm)
 
-## 1. Giao diện và routing (2 điểm)
-
-- Dữ liệu trong `db.json` (Khóa học, Bài học, Học viên) đã được cung cấp sẵn.
+- Dữ liệu trong `db.json` (Khóa học, Bài học) đã được cung cấp sẵn.
 - Xây dựng hệ định tuyến cho các trang:
-  - Trang danh sách khóa học.
-  - Trang chi tiết khóa học (bao gồm danh sách bài học).
-  - Trang danh sách học viên của khóa học.
-- Xử lý route không tồn tại (404) và hiển thị thông báo lỗi cho người dùng.
+  - ManagementCourse (Trang danh sách khóa học).
+  - ManagementLesson (Trang danh sách bài học theo khóa học).
+- Xử lý route không tồn tại (404).
 - Giao diện thân thiện và dễ sử dụng, có thể sử dụng CSS hoặc thư viện UI đơn giản.
 
+## 2. Auth (3 điểm)
+
+- Đăng ký vào hệ thống (bao gồm email, password, fullname). (1.5 điểm)
+  - Role mặc định là học viên (student).
+  - Đăng ký thành công chuyển sang trang đăng nhập.
+  - Đăng ký thất bại, reset form và hiển thị lỗi.
+- Đăng nhập vào hệ thống (bao gồm email, password). (1.5 điểm)
+  - Đăng nhập thành công:
+    - Nếu role là admin, chuyển vào trang quản lý khoá học của admin,
+    - Nếu role là học viên, chuyển vào home (lưu ý, không cần xây dựng nội dung cho trang home).
+  - Đăng nhập thất bại reset form và hiển thị lỗi.
+  - Lưu trạng thái đăng nhập (token) và thông tin người dùng trong localStorage.
+
+**Validation:**
+
+- email: phải đúng định dạng email.
+- password: phải có ít nhất 6 ký tự.
+- fullname: không được để trống và tối thiểu 6 ký tự.
+- Trừ 0.5 điểm nếu không validation
+
 ---
 
-## 2. Quản Lý Khóa Học (courses) (2 điểm)
+**Những tính năng sau chỉ áp dụng với role là admin:**
 
-- **GET**: Lấy danh sách khóa học từ API và hiển thị tên + mô tả khóa học.
-- **POST**: Thêm mới khóa học qua form.
-- **PUT**: Cập nhật thông tin khóa học.
-- **DELETE**: Xóa khóa học.
+## 3. Quản Lý Khóa Học (courses) (2 điểm)
+
+- **GET**: Lấy danh sách khóa học từ API và hiển thị đầy đủ thông tin.
+- **POST**: Thêm mới khóa học qua form, thêm xong quay lại trang danh sách.
+- **PUT**: Cập nhật thông tin khóa học, thêm xong quay lại trang danh sách.
+- **DELETE**: Xóa khóa học (có confirm), xoá xong cập nhật lại danh sách.
+
+**Validation:**
+
+- title: không được để trống và tối thiểu 6 ký tự.
+- price: phải là số dương.
+- description: là chuỗi không bắt buộc.
+- Trừ 0.5 điểm nếu không validation
 
 ---
 
-## 3. Quản Lý Bài Học (lessons) (2 điểm)
+## 4. Quản Lý Bài Học (lessons) (2 điểm)
 
 - **GET**: Lấy danh sách bài học theo khóa học (khi ấn vào tên khoá học sẽ vào trang danh sách bài học thuộc khoá học đó).
-- **POST**: Thêm bài học cho khóa học.
-- **PUT**: Cập nhật thông tin bài học.
-- **DELETE**: Xóa bài học khỏi khóa học.
+- **POST**: Thêm bài học mới cho khóa học, khi thêm xong quay lại trang danh sách bài học thuộc khoá học đó.
+- **PUT**: Cập nhật thông tin bài học, khi cập nhật xong quay lại trang danh sách bài học thuộc khoá học đó.
+- **DELETE**: Xóa bài học (có confirm), xoá xong cập nhật lại danh sách.
+
+**Validation:**
+
+- title: không được để trống và tối thiểu 6 ký tự.
+- content: là chuỗi không bắt buộc.
+- Trừ 0.5 điểm nếu không validation
 
 ---
 
-## 4. Các tính năng nâng cao (2 điểm)
+## 5. Các tính năng nâng cao (2 điểm)
 
 - Tìm kiếm khóa học theo tên.
-- Tìm kiếm bài học theo tên.
-- Sắp xếp khoá học theo tên từ A-Z hoặc Z-A.
-- Sắp xếp khoá học theo giá từ thấp đến cao hoặc từ cao xuống thấp, bỏ sắp xếp.
-
----
-
-## 5. Đăng ký, đăng nhập và nhập học (2 điểm)
-
-- Đăng ký vào hệ thống (bao gồm email, password, tên học viên).
-- Đăng nhập vào hệ thống (bao gồm email, password). Sau khi đăng nhập thành công, chuyển hướng đến trang danh sách khóa học.
-- Học viên có thể đăng ký khoá học hoặc huỷ đăng ký khoá học, khoá học mà học viên đăng ký sẽ được ghi nhận bằng trường dữ liệu `courses`.
-- Học viên có thể xem danh sách khoá học đã đăng ký, nếu `courses` là mảng rỗng nghĩa là học viên chưa có khoá học nào.
+- Sắp xếp khóa học theo giá (tăng dần, giảm dần, huỷ sắp xếp).
 
 ---
 
 ## Quy ước tính điểm
 
-- **Routing và giao diện:** 2 điểm
-- **Quản lý khóa học:** 2 điểm
-- **Quản lý bài học:** 2 điểm
-- **Tính năng nâng cao:** 2 điểm
-- **Đăng ký, đăng nhập và nhập học:** 2 điểm
+- Tổng điểm: **10 điểm.**
+  - Giao diện và routing: **1 điểm.**
+  - Auth: **3 điểm.**
+  - Quản lý khóa học: **2 điểm.**
+  - Quản lý bài học: **2 điểm.**
+  - Các tính năng nâng cao: **2 điểm.**
