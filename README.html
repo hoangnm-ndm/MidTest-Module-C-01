@@ -376,7 +376,7 @@ code {
 </ul>
 <hr>
 <h2 id="y%C3%AAu-c%E1%BA%A7u">Yêu cầu</h2>
-<p>Xây dựng ứng dụng quản lý hệ thống học tập (LMS) với ReactJS và <code>json-server</code> bao gồm các tính năng sau:</p>
+<p>Xây dựng ứng dụng <strong>quản lý học tập (LMS)</strong> với ReactJS và <code>json-server</code> bao gồm các tính năng sau:</p>
 <h2 id="1-giao-di%E1%BB%87n-v%C3%A0-routing-1-%C4%91i%E1%BB%83m">1. Giao diện và routing (1 điểm)</h2>
 <ul>
 <li>Xây dựng hệ thống định tuyến để dễ dàng điều hướng cho những tác vụ phía dưới.</li>
@@ -387,38 +387,31 @@ code {
 <ul>
 <li>Đăng ký vào hệ thống (bao gồm email, password, fullname). (1 điểm)
 <ul>
-<li>Role mặc định là học viên (student).</li>
+<li>Role mặc định là <code>student</code>.</li>
 <li>Đăng ký thành công chuyển sang trang đăng nhập.</li>
 <li>Đăng ký thất bại, reset form và hiển thị lỗi.</li>
 </ul>
 </li>
 <li>Đăng nhập vào hệ thống (bao gồm email, password). (1 điểm)
 <ul>
-<li>Đăng nhập thành công:
-<ul>
-<li>Nếu role là admin, chuyển vào trang quản lý khoá học của admin,</li>
-<li>Nếu role là học viên, chuyển vào home (lưu ý, không cần xây dựng nội dung cho trang home).</li>
-</ul>
-</li>
-<li>Đăng nhập thất bại reset form và hiển thị lỗi.</li>
-<li>Lưu trạng thái đăng nhập (token) và thông tin người dùng trong localStorage.</li>
+<li>Đăng nhập thành công: lưu trạng thái đăng nhập (token) và thông tin người dùng trong localStorage.</li>
+<li>Đăng nhập thất bại: reset form và hiển thị lỗi.</li>
 </ul>
 </li>
 <li>Protected Route (xây dựng các tuyến đường được bảo vệ) (1 điểm):
 <ul>
-<li>Nếu role là admin, có thể thực hiện các tác vụ quản lý khoá học, bài học phía dưới đây.</li>
-<li>Nếu role là học viên, chỉ hiện thị trang home sau khi đăng nhập.</li>
+<li>Nếu role là <code>admin</code>, chuyển vào trang quản lý khoá học của admin,</li>
+<li>Nếu role khác, thông báo <code>Forbidden: You don't have permission to access this page.</code></li>
 </ul>
 </li>
 </ul>
 <p><strong>Validation:</strong></p>
 <ul>
-<li>email: phải đúng định dạng email.</li>
-<li>password: phải có ít nhất 6 ký tự.</li>
-<li>fullname: không được để trống và tối thiểu 6 ký tự.</li>
+<li><code>email</code>: phải đúng định dạng email.</li>
+<li><code>password</code>: phải có ít nhất 6 ký tự.</li>
+<li><code>fullname</code>: không được để trống và tối thiểu 6 ký tự.</li>
 <li>Trừ 0.5 điểm nếu không validation</li>
 </ul>
-<hr>
 <p><strong>Những tính năng sau chỉ áp dụng với role là admin:</strong></p>
 <h2 id="3-qu%E1%BA%A3n-l%C3%BD-kh%C3%B3a-h%E1%BB%8Dc-courses-2-%C4%91i%E1%BB%83m">3. Quản Lý Khóa Học (courses) (2 điểm)</h2>
 <ul>
@@ -429,12 +422,11 @@ code {
 </ul>
 <p><strong>Validation:</strong></p>
 <ul>
-<li>title: không được để trống và tối thiểu 6 ký tự.</li>
-<li>price: phải là số dương.</li>
-<li>description: là chuỗi không bắt buộc.</li>
+<li><code>title</code>: không được để trống và tối thiểu 6 ký tự.</li>
+<li><code>price</code>: phải là số dương.</li>
+<li><code>description</code>: là chuỗi không bắt buộc.</li>
 <li>Trừ 0.5 điểm nếu không validation</li>
 </ul>
-<hr>
 <h2 id="4-qu%E1%BA%A3n-l%C3%BD-b%C3%A0i-h%E1%BB%8Dc-lessons-2-%C4%91i%E1%BB%83m">4. Quản Lý Bài Học (lessons) (2 điểm)</h2>
 <ul>
 <li><strong>GET</strong>: Lấy danh sách bài học theo khóa học (khi ấn vào tên khoá học sẽ vào trang danh sách bài học thuộc khoá học đó).</li>
@@ -444,17 +436,15 @@ code {
 </ul>
 <p><strong>Validation:</strong></p>
 <ul>
-<li>title: không được để trống và tối thiểu 6 ký tự.</li>
-<li>content: là chuỗi không bắt buộc.</li>
+<li><code>title</code>: không được để trống và tối thiểu 6 ký tự.</li>
+<li><code>content</code>: là chuỗi không bắt buộc.</li>
 <li>Trừ 0.5 điểm nếu không validation</li>
 </ul>
-<hr>
 <h2 id="5-c%C3%A1c-t%C3%ADnh-n%C4%83ng-n%C3%A2ng-cao-2-%C4%91i%E1%BB%83m">5. Các tính năng nâng cao (2 điểm)</h2>
 <ul>
 <li>Tìm kiếm khóa học theo tên (không cần xử lý vấn đề tên tiếng Việt).</li>
 <li>Sắp xếp khóa học theo giá (tăng dần, giảm dần, huỷ sắp xếp).</li>
 </ul>
-<hr>
 <h2 id="quy-%C6%B0%E1%BB%9Bc-t%C3%ADnh-%C4%91i%E1%BB%83m">Quy ước tính điểm</h2>
 <ul>
 <li>Tổng điểm: <strong>10 điểm.</strong>

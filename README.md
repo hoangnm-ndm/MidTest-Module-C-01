@@ -11,7 +11,7 @@
 
 ## Yêu cầu
 
-Xây dựng ứng dụng quản lý hệ thống học tập (LMS) với ReactJS và `json-server` bao gồm các tính năng sau:
+Xây dựng ứng dụng **quản lý học tập (LMS)** với ReactJS và `json-server` bao gồm các tính năng sau:
 
 ## 1. Giao diện và routing (1 điểm)
 
@@ -22,27 +22,22 @@ Xây dựng ứng dụng quản lý hệ thống học tập (LMS) với ReactJS
 ## 2. Auth (3 điểm)
 
 - Đăng ký vào hệ thống (bao gồm email, password, fullname). (1 điểm)
-  - Role mặc định là học viên (student).
+  - Role mặc định là `student`.
   - Đăng ký thành công chuyển sang trang đăng nhập.
   - Đăng ký thất bại, reset form và hiển thị lỗi.
 - Đăng nhập vào hệ thống (bao gồm email, password). (1 điểm)
-  - Đăng nhập thành công:
-    - Nếu role là admin, chuyển vào trang quản lý khoá học của admin,
-    - Nếu role là học viên, chuyển vào home (lưu ý, không cần xây dựng nội dung cho trang home).
-  - Đăng nhập thất bại reset form và hiển thị lỗi.
-  - Lưu trạng thái đăng nhập (token) và thông tin người dùng trong localStorage.
+  - Đăng nhập thành công: lưu trạng thái đăng nhập (token) và thông tin người dùng trong localStorage.
+  - Đăng nhập thất bại: reset form và hiển thị lỗi.
 - Protected Route (xây dựng các tuyến đường được bảo vệ) (1 điểm):
-  - Nếu role là admin, có thể thực hiện các tác vụ quản lý khoá học, bài học phía dưới đây.
-  - Nếu role là học viên, chỉ hiện thị trang home sau khi đăng nhập.
+  - Nếu role là `admin`, chuyển vào trang quản lý khoá học của admin,
+  - Nếu role khác, thông báo `Forbidden: You don't have permission to access this page.`
 
 **Validation:**
 
-- email: phải đúng định dạng email.
-- password: phải có ít nhất 6 ký tự.
-- fullname: không được để trống và tối thiểu 6 ký tự.
+- `email`: phải đúng định dạng email.
+- `password`: phải có ít nhất 6 ký tự.
+- `fullname`: không được để trống và tối thiểu 6 ký tự.
 - Trừ 0.5 điểm nếu không validation
-
----
 
 **Những tính năng sau chỉ áp dụng với role là admin:**
 
@@ -55,12 +50,10 @@ Xây dựng ứng dụng quản lý hệ thống học tập (LMS) với ReactJS
 
 **Validation:**
 
-- title: không được để trống và tối thiểu 6 ký tự.
-- price: phải là số dương.
-- description: là chuỗi không bắt buộc.
+- `title`: không được để trống và tối thiểu 6 ký tự.
+- `price`: phải là số dương.
+- `description`: là chuỗi không bắt buộc.
 - Trừ 0.5 điểm nếu không validation
-
----
 
 ## 4. Quản Lý Bài Học (lessons) (2 điểm)
 
@@ -71,18 +64,14 @@ Xây dựng ứng dụng quản lý hệ thống học tập (LMS) với ReactJS
 
 **Validation:**
 
-- title: không được để trống và tối thiểu 6 ký tự.
-- content: là chuỗi không bắt buộc.
+- `title`: không được để trống và tối thiểu 6 ký tự.
+- `content`: là chuỗi không bắt buộc.
 - Trừ 0.5 điểm nếu không validation
-
----
 
 ## 5. Các tính năng nâng cao (2 điểm)
 
 - Tìm kiếm khóa học theo tên (không cần xử lý vấn đề tên tiếng Việt).
 - Sắp xếp khóa học theo giá (tăng dần, giảm dần, huỷ sắp xếp).
-
----
 
 ## Quy ước tính điểm
 
